@@ -1,0 +1,11 @@
+.nav {
+  border: 2px solid forestgreen;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 24px;
+}
