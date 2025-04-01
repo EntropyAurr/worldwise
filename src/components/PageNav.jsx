@@ -19,6 +19,7 @@ function PageNav() {
             Login
           </NavLink>
         </li>
+        {/* add "/" before path name to activate active class of the link, otherwise the link won't have active class. This means we can use path with or without "/". */}
       </ul>
     </nav>
   );
