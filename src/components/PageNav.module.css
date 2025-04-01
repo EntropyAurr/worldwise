@@ -1,11 +1,34 @@
 .nav {
-  border: 2px solid forestgreen;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .nav ul {
   list-style: none;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  font-size: 24px;
+  gap: 4rem;
+}
+
+.nav a:link,
+.nav a:visited {
+  font-size: 1.8rem;
+  font-weight: 600;
+  font-family: "Inter";
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--color-light--2);
+}
+
+.nav a:global(.active) {
+  color: var(--color-brand--2);
+}
+
+a.ctaLink:link,
+a.ctaLink:visited {
+  background-color: var(--color-brand--2);
+  color: var(--color-dark--0);
+  padding: 0.8rem 2rem;
+  border-radius: 7px;
 }

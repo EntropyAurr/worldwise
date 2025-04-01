@@ -53,6 +53,7 @@ input:focus {
 
 .cta:link,
 .cta:visited {
+  font-family: "Inter";
   display: inline-block;
   background-color: var(--color-brand--2);
   color: var(--color-dark--1);
