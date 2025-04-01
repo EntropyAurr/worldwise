@@ -1,5 +1,6 @@
 import styles from "./Product.module.css";
-function Product() {
+
+export default function Product() {
   return (
     <main className={styles.product}>
       <section>
@@ -13,5 +14,3 @@ function Product() {
     </main>
   );
 }
-
-export default Product;
