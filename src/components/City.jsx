@@ -1,12 +1,20 @@
 import styles from "./City.module.css";
 
-const formatDate = (date) =>
-  new Intl.DateTimeFormat("en", {
+// Check if Intl is available
+// console.log(typeof Intl); // Should print "object" or "function"
+// console.log(new Intl.DateTimeFormat("en").format(new Date())); // Should print a formatted date
+/* globals: { ...globals.browser, Intl: "readonly" }, add this line of code to eslintrc.config.js file*/
+
+const formatDate = (date) => {
+  if (!date) return "Invalid Date";
+
+  return new Intl.DateTimeFormat("en", {
     day: "numeric",
     month: "long",
     year: "numeric",
     weekday: "long",
   }).format(new Date(date));
+};
 
 function City() {
   const currentCity = {
@@ -41,7 +49,7 @@ function City() {
 
       <div className={styles.row}>
         <h6>Learn more</h6>
-        <a href={`https://en.wikipedia.org/wiki/${cityName}`} target="_blank" rel="noreffer">
+        <a href={`https://en.wikipedia.org/wiki/${cityName}`} target="_blank" rel="noreferrer">
           Check out {cityName} on Wikipedia &rarr;
         </a>
       </div>
