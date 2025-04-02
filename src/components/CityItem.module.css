@@ -22,11 +22,13 @@
 
 .emoji {
   font-size: 2.6rem;
-  line-height: 1;
+  line-height: 1.5;
 }
 
 .name {
-  font-size: 1.7rem;
+  font-family: "Baloo Bhai 2";
+  font-size: 2rem;
+  line-height: 1;
   font-weight: 600;
   margin-right: auto;
 }
