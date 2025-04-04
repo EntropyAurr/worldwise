@@ -39,6 +39,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route index element={<Homepage />} />
+
         <Route path="app" element={<AppLayout />}>
           <Route index element={<Navigate replace to="cities" />} />
           <Route path="cities" element={<CityList cities={cities} isLoading={isLoading} />} />
@@ -46,6 +47,7 @@ function App() {
           <Route path="countries" element={<CountryList cities={cities} isLoading={isLoading} />} />
           <Route path="form" element={<Form />} />
         </Route>
+
         <Route path="product" element={<Product />} />
         <Route path="pricing" element={<Pricing />} />
         <Route path="login" element={<Login />} />
