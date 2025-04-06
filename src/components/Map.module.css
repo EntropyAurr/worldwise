@@ -1,6 +1,6 @@
 .mapContainer {
   flex: 1;
-  height: 100%;
+  height: calc(100vh - 4rem);
   background-color: var(--color-dark--2);
   position: relative;
   cursor: pointer;

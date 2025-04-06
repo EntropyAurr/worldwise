@@ -26,6 +26,7 @@ function CitiesProvider({ children }) {
     fetchCities();
   }, []);
 
+  // get the data of the current city
   async function getCity(id) {
     try {
       setIsloading(true);
@@ -33,7 +34,7 @@ function CitiesProvider({ children }) {
       const data = await res.json();
       setCurrentCity(data);
     } catch {
-      alert("There was an error loading data...");
+      alert("There was an error when loading data of the current city...");
     } finally {
       setIsloading(false);
     }

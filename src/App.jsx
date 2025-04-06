@@ -23,6 +23,7 @@ function App() {
             <Route index element={<Navigate replace to="cities" />} />
             <Route path="cities" element={<CityList />} />
             <Route path="cities/:id" element={<City />} />
+            {/* useParams will return an object with the key named: id */}
             <Route path="countries" element={<CountryList />} />
             <Route path="form" element={<Form />} />
           </Route>

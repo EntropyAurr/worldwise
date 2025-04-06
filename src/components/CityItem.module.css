@@ -2,15 +2,14 @@
 .cityItem:link,
 .cityItem:visited {
   display: flex;
-  gap: 1.6rem;
   align-items: center;
-
+  justify-content: space-between;
+  gap: 1.6rem;
+  padding: 1rem 2rem;
   background-color: var(--color-dark--2);
   border-radius: 7px;
-  padding: 1rem 2rem;
   border-left: 5px solid var(--color-brand--2);
   cursor: pointer;
-
   color: inherit;
   text-decoration: none;
 }
@@ -20,21 +19,25 @@
   border-left: 5px solid var(--color-brand--2);
 }
 
-.emoji {
+.img {
+  width: 2.5rem;
+}
+
+.icon {
   font-size: 2.6rem;
-  line-height: 1.5;
 }
 
 .name {
+  width: 16rem;
   font-family: "Baloo Bhai 2";
-  font-size: 2rem;
+  font-size: 2.2rem;
   line-height: 1;
   font-weight: 600;
-  margin-right: auto;
 }
 
 .date {
   font-size: 1.5rem;
+  width: 14rem;
 }
 
 .deleteBtn {

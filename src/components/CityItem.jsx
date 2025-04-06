@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import styles from "./CityItem.module.css";
+import { useCities } from "../../contexts/CitiesContext";
 
 const formatDate = (date) => {
   if (!date) return "Invalid Date";
@@ -11,14 +12,18 @@ const formatDate = (date) => {
   }).format(new Date(date));
 };
 
+const FLAG_API = "https://countryflagsapi.netlify.app/flag/";
+
 function CityItem({ city }) {
-  const { cityName, date, emoji, id, position } = city;
+  const { currentCity } = useCities();
+  const { cityName, date, emoji, icon, id, position } = city;
 
   return (
     <li>
-      <Link className={styles.cityItem} to={`${id}?lat=${position.lat}&lng=${position.lng}`}>
-        <span className={styles.emoji}>{emoji}</span>
+      <Link className={`${styles.cityItem} ${id === currentCity.id ? styles["cityItem--active"] : ""}`} to={`${id}?lat=${position.lat}&lng=${position.lng}`}>
+        <img className={styles.img} src={`${FLAG_API}/${emoji}.svg`} />
         <h3 className={styles.name}>{cityName}</h3>
+        <span className={styles.icon}>{icon}</span>
         <time className={styles.date}>{formatDate(date)}</time>
         <button className={styles.deleteBtn}>&times;</button>
       </Link>

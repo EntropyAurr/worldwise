@@ -3,14 +3,15 @@
   flex-direction: column;
   flex-basis: 56rem;
   align-items: center;
-  height: calc(100vh - 4.8rem);
+  justify-content: space-between;
+  height: calc(100vh - 4rem);
   background-color: var(--color-dark--1);
-  padding: 3rem 4rem 3.5rem 3rem;
+  padding: 2rem 4rem 0;
   overscroll-behavior-y: none;
 }
 
 .footer {
-  margin-top: auto;
+  margin-bottom: 1.5rem;
 }
 
 .copyright {

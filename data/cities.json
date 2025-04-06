@@ -1,9 +1,23 @@
 {
   "cities": [
     {
+      "cityName": "Ho Chi Minh",
+      "country": "Vietnam",
+      "emoji": "VN",
+      "icon": "🍺",
+      "date": "2025-04-12T15:59:59.138Z",
+      "notes": "My home!",
+      "position": {
+        "lat": 10.769444,
+        "lng": 106.681944
+      },
+      "id": 18118027
+    },
+    {
       "cityName": "Lisbon",
       "country": "Portugal",
-      "emoji": "🇦🇫 🌿",
+      "emoji": "PT",
+      "icon": "🌿",
       "date": "2027-10-31T15:59:59.138Z",
       "notes": "My favorite city so far!",
       "position": {
@@ -15,50 +29,54 @@
     {
       "cityName": "Tokyo",
       "country": "Japan",
-      "emoji": "🇯🇵 🍣",
+      "emoji": "JP",
+      "icon": "🍣",
       "date": "2027-07-15T08:22:53.976Z",
       "notes": "",
       "position": {
-        "lat": 40.46635901755316,
-        "lng": -3.7133789062500004
+        "lat": 35.689556,
+        "lng": 139.691722
       },
       "id": 17806751
     },
     {
       "cityName": "Berlin",
       "country": "Germany",
-      "emoji": "🇩🇪 🍄",
+      "emoji": "DE",
+      "icon": "🍄",
       "date": "2027-02-12T09:24:11.863Z",
       "notes": "Amazing 😃",
       "position": {
         "lat": 52.53586782505711,
         "lng": 13.376933665713324
       },
-      "id": 98443197
+      "id": 984431971
     },
     {
       "cityName": "London",
-      "country": "England",
-      "emoji": "🇬🇧 🍱",
+      "country": "United Kingdom",
+      "emoji": "GB",
+      "icon": "🍱",
       "date": "2027-07-07T08:22:53.976Z",
       "notes": "Beautiful!",
       "position": {
-        "lat": 40.46635901755316,
-        "lng": -3.7133789062500004
+        "lat": 51.507222,
+        "lng": -0.1275
       },
-      "id": 17807751
+      "id": 815463772
     },
     {
       "cityName": "Paris",
       "country": "France",
-      "emoji": "🇫🇷 🍀",
+      "emoji": "FR",
+      "icon": "🍀",
       "date": "2027-02-14T09:24:11.863Z",
       "notes": "Romance ❤️",
       "position": {
-        "lat": 52.53586782505711,
-        "lng": 13.376933665713324
+        "lat": 48.856667,
+        "lng": 2.352222
       },
-      "id": 98583197
+      "id": 98583190
     }
   ]
 }

@@ -13,6 +13,10 @@
   border-left: 5px solid var(--color-brand--1);
 }
 
+.img {
+  width: 2.5rem;
+}
+
 .countryItem span:first-child {
   font-size: 2rem;
   line-height: 1;
