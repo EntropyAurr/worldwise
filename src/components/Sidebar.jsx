@@ -8,8 +8,7 @@ function Sidebar() {
     <div className={styles.sidebar}>
       <Logo />
       <AppNav />
-      <Outlet />
-
+      <Outlet /> {/* tell react router where to render the child route components */}
       <footer className={styles.footer}>
         <p className={styles.copyright}>&copy; Copyright {new Date().getFullYear()} by Aurora</p>
       </footer>

@@ -47,3 +47,19 @@
   font-size: 1.6rem;
   color: var(--color-brand--1);
 }
+
+.name {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.name p {
+  font-weight: 600;
+  font-size: 2.2rem;
+  font-family: "Poppins";
+}
+
+.img {
+  width: 2.5rem;
+}

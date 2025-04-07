@@ -3,7 +3,7 @@
   flex-direction: column;
   flex-basis: 56rem;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   height: calc(100vh - 4rem);
   background-color: var(--color-dark--1);
   padding: 2rem 4rem 0;
@@ -11,7 +11,8 @@
 }
 
 .footer {
-  margin-bottom: 1.5rem;
+  position: absolute;
+  bottom: 2.5rem;
 }
 
 .copyright {

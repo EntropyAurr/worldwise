@@ -10,6 +10,8 @@ import BackButton from "./BackButton";
 // console.log(new Intl.DateTimeFormat("en").format(new Date())); // Should print a formatted date
 /* globals: { ...globals.browser, Intl: "readonly" }, add this line of code to eslintrc.config.js file*/
 
+const FLAG_API = "https://countryflagsapi.netlify.app/flag/";
+
 const formatDate = (date) => {
   if (!date) return "Invalid Date";
 
@@ -32,7 +34,7 @@ function City() {
     [id]
   );
 
-  const { cityName, emoji, icon, date, notes } = currentCity;
+  const { cityName, emoji, date, notes } = currentCity;
 
   if (isLoading) return <Spinner />;
 
@@ -40,9 +42,10 @@ function City() {
     <div className={styles.city}>
       <div className={styles.row}>
         <h6>City name</h6>
-        <h3>
-          <span>{emoji}</span> {cityName}
-        </h3>
+        <span className={styles.name}>
+          <img className={styles.img} src={`${FLAG_API}/${emoji}.svg`} />
+          <p>{cityName}</p>
+        </span>
       </div>
 
       <div className={styles.row}>

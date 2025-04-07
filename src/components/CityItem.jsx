@@ -15,8 +15,13 @@ const formatDate = (date) => {
 const FLAG_API = "https://countryflagsapi.netlify.app/flag/";
 
 function CityItem({ city }) {
-  const { currentCity } = useCities();
+  const { currentCity, deleteCity } = useCities();
   const { cityName, date, emoji, icon, id, position } = city;
+
+  function handleDelete(e) {
+    e.preventDefault();
+    deleteCity(id);
+  }
 
   return (
     <li>
@@ -25,7 +30,9 @@ function CityItem({ city }) {
         <h3 className={styles.name}>{cityName}</h3>
         <span className={styles.icon}>{icon}</span>
         <time className={styles.date}>{formatDate(date)}</time>
-        <button className={styles.deleteBtn}>&times;</button>
+        <button className={styles.deleteBtn} onClick={handleDelete}>
+          &times;
+        </button>
       </Link>
     </li>
   );
