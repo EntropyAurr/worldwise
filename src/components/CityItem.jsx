@@ -15,8 +15,8 @@ const formatDate = (date) => {
 const FLAG_API = "https://countryflagsapi.netlify.app/flag/";
 
 function CityItem({ city }) {
-  const { currentCity, deleteCity } = useCities();
   const { cityName, date, emoji, icon, id, position } = city;
+  const { currentCity, deleteCity } = useCities();
 
   function handleDelete(e) {
     e.preventDefault();

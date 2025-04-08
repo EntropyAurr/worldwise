@@ -55,7 +55,7 @@ function CitiesProvider({ children }) {
     fetchCities();
   }, []);
 
-  // get the data of the current city
+  // get the data of the Current City
   async function getCity(id) {
     if (Number(id) === currentCity.id) return;
 

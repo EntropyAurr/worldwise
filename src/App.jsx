@@ -1,4 +1,5 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { CitiesProvider } from "../contexts/CitiesContext";
 
 import Homepage from "./pages/Homepage";
 import AppLayout from "./pages/AppLayout";
@@ -10,7 +11,6 @@ import CityList from "./components/CityList";
 import CountryList from "./components/CountryList";
 import City from "./components/City";
 import Form from "./components/Form";
-import { CitiesProvider } from "../contexts/CitiesContext";
 
 function App() {
   return (
@@ -21,6 +21,7 @@ function App() {
 
           <Route path="app" element={<AppLayout />}>
             <Route index element={<Navigate replace to="cities" />} />
+            {/* React Router will automatically navigate to /cities as a default child route of the app path; Replaces the current entry in the history stack instead of pushing a new one onto it. */}
             <Route path="cities" element={<CityList />} />
             <Route path="cities/:id" element={<City />} />
             {/* useParams will return an object with the key named: id */}

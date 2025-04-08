@@ -66,16 +66,29 @@
       "id": "98583190"
     },
     {
-      "id": "d425",
+      "id": "9b54",
       "cityName": "Kerteminde",
       "country": "Denmark",
       "emoji": "DK",
-      "icon": "🪷",
-      "date": "2025-04-07T11:39:38.303Z",
+      "icon": "🎄",
+      "date": "2025-04-12T01:49:58.000Z",
       "notes": "",
       "position": {
-        "lat": "55.51601052096677",
-        "lng": "10.62789134946867"
+        "lat": "55.54291035724572",
+        "lng": "10.658649204551118"
+      }
+    },
+    {
+      "id": "967d",
+      "cityName": "Welwyn Garden City",
+      "country": "United Kingdom of Great Britain and Northern Ireland (the)",
+      "emoji": "GB",
+      "icon": "🍒",
+      "date": "2025-04-08T09:03:51.091Z",
+      "notes": "",
+      "position": {
+        "lat": "51.80564283054995",
+        "lng": "-0.21217346191406253"
       }
     }
   ]
