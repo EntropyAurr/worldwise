@@ -6,8 +6,8 @@ const CitiesContext = createContext();
 
 const initialState = {
   cities: [],
-  isLoading: false,
   currentCity: {},
+  isLoading: false,
   error: "",
 };
 
@@ -39,6 +39,7 @@ function reducer(state, action) {
 function CitiesProvider({ children }) {
   const [{ cities, isLoading, currentCity, error }, dispatch] = useReducer(reducer, initialState);
 
+  // Retrieve the data of cities.json file (fake API)
   useEffect(function () {
     async function fetchCities() {
       dispatch({ type: "loading" });
@@ -55,7 +56,7 @@ function CitiesProvider({ children }) {
     fetchCities();
   }, []);
 
-  // get the data of the Current City
+  // Get the data of current city object in the cities array based on the id
   async function getCity(id) {
     if (Number(id) === currentCity.id) return;
 
@@ -71,6 +72,7 @@ function CitiesProvider({ children }) {
     }
   }
 
+  // Create a new city object and send it to the fake API
   async function createCity(newCity) {
     dispatch({ type: "loading" });
 
@@ -89,6 +91,7 @@ function CitiesProvider({ children }) {
     }
   }
 
+  // Delete a city object from the API based on the id
   async function deleteCity(id) {
     dispatch({ type: "loading" });
 

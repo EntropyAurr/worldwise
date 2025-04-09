@@ -8,10 +8,12 @@ import { useCities } from "../../contexts/CitiesContext";
 import { useGeolocation } from "../hooks/useGeolocation";
 import { useURLPosition } from "../hooks/useURLPosition";
 
+const FLAG_API = "https://countryflagsapi.netlify.app/flag";
+
 function Map() {
   const { cities } = useCities();
-  const [mapPosition, setMapPosition] = useState([40, 0]);
-  const { isLoading: isLoadingPosition, position: geolocationPosition, getPosition } = useGeolocation();
+  const [mapPosition, setMapPosition] = useState([40, -1]);
+  const { isLoading: isLoadingPosition, position: geolocationPosition, getPosition } = useGeolocation(); // destruct & rename properties of useGeolocation object
 
   const [mapLat, mapLng] = useURLPosition();
 
@@ -25,7 +27,9 @@ function Map() {
   useEffect(
     function () {
       {
-        if (geolocationPosition) setMapPosition([geolocationPosition.lat, geolocationPosition.lng]);
+        if (geolocationPosition) {
+          setMapPosition([geolocationPosition.lat, geolocationPosition.lng]);
+        }
       }
     },
     [geolocationPosition]
@@ -45,7 +49,8 @@ function Map() {
         {cities.map((city) => (
           <Marker position={[city.position.lat, city.position.lng]} key={city.id}>
             <Popup>
-              <span>{city.emoji}</span> <span>{city.cityName}</span>
+              <img className={styles.img} src={`${FLAG_API}/${city.emoji}.svg`} />
+              <span>{city.cityName}</span>
             </Popup>
           </Marker>
         ))}
@@ -69,7 +74,7 @@ function DetectClick() {
 
   useMapEvents({
     click: (e) => {
-      navigate(`form?lat=${e.latlng.lat}&lng=${e.latlng.lng}`);
+      navigate(`form?lat=${e.latlng.lat}&lng=${e.latlng.lng}`); // lat, lng will be used by useSearchParams() hook for retrieving the latitude and longitude from the Url
     },
   });
 }

@@ -13,7 +13,7 @@ import Message from "./Message";
 import Spinner from "./Spinner";
 
 const BASE_URL = "https://api.bigdatacloud.net/data/reverse-geocode-client";
-const FLAG_API = "https://countryflagsapi.netlify.app/flag/";
+const FLAG_API = "https://countryflagsapi.netlify.app/flag";
 
 function Form() {
   const [lat, lng] = useURLPosition();
@@ -76,9 +76,7 @@ function Form() {
   }
 
   if (isLoadingGeocoding) return <Spinner />;
-
   if (!lat && !lng) return <Message message="Start by clicking somewhere on the map!" />;
-
   if (geocodingError) return <Message message={geocodingError} />;
 
   return (
