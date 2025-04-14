@@ -6,7 +6,7 @@ import PageNav from "../components/PageNav";
 import Button from "../components/Button";
 
 function Login() {
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState("entropy.au@gmail.com");
   const [password, setPassword] = useState("");
 
   const { login, isAuthenticated } = useAuth();
