@@ -1,4 +1,4 @@
-import { createContext, useEffect, useContext, useReducer } from "react";
+import { createContext, useEffect, useContext, useReducer, useCallback } from "react";
 
 const BASE_URL = "http://localhost:7000";
 
@@ -57,20 +57,23 @@ function CitiesProvider({ children }) {
   }, []);
 
   // Get the data of current city object in the cities array based on the id
-  async function getCity(id) {
-    if (Number(id) === currentCity.id) return;
+  const getCity = useCallback(
+    async function getCity(id) {
+      if (Number(id) === currentCity.id) return;
 
-    dispatch({ type: "loading" });
+      dispatch({ type: "loading" });
 
-    try {
-      const res = await fetch(`${BASE_URL}/cities/${id}`);
-      const data = await res.json();
+      try {
+        const res = await fetch(`${BASE_URL}/cities/${id}`);
+        const data = await res.json();
 
-      dispatch({ type: "city/loaded", payload: data });
-    } catch {
-      dispatch({ type: "rejected", payload: "There was an error when loading data of the current city..." });
-    }
-  }
+        dispatch({ type: "city/loaded", payload: data });
+      } catch {
+        dispatch({ type: "rejected", payload: "There was an error when loading data of the current city..." });
+      }
+    },
+    [currentCity.id]
+  );
 
   // Create a new city object and send it to the fake API
   async function createCity(newCity) {
