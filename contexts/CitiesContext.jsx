@@ -82,10 +82,10 @@ function CitiesProvider({ children }) {
     try {
       const res = await fetch(`${BASE_URL}/cities`, {
         method: "POST",
-        body: JSON.stringify(newCity),
         headers: {
           "Content-Type": "application/json",
         },
+        body: JSON.stringify(newCity),
       });
       const data = await res.json();
       dispatch({ type: "city/created", payload: data });
