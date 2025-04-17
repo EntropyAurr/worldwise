@@ -4,23 +4,12 @@ import { CitiesProvider } from "../contexts/CitiesContext";
 import { AuthProvider } from "../contexts/FakeAuthContext";
 import ProtectedRoute from "./pages/ProtectedRoute";
 
-// import Homepage from "./pages/Homepage";
-// import AppLayout from "./pages/AppLayout";
-// import Product from "./pages/Product";
-// import Pricing from "./pages/Pricing";
-// import Login from "./pages/Login";
-// import PageNotFound from "./pages/PageNotFound";
-
 const Homepage = lazy(() => import("./pages/Homepage"));
 const AppLayout = lazy(() => import("./pages/AppLayout"));
 const Product = lazy(() => import("./pages/Product"));
 const Pricing = lazy(() => import("./pages/Pricing"));
 const Login = lazy(() => import("./pages/Login"));
 const PageNotFound = lazy(() => import("./pages/PageNotFound"));
-
-// dist/index.html                   0.46 kB │ gzip:   0.30 kB
-// dist/assets/index-CrkhS_ta.css   31.44 kB │ gzip:   5.38 kB
-// dist/assets/index-DIpiKLEi.js   565.99 kB │ gzip: 166.85 kB
 
 import CityList from "./components/CityList";
 import CountryList from "./components/CountryList";
