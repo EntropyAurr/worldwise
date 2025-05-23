@@ -1,5 +1,6 @@
 import { createContext, useContext, useReducer } from "react";
 
+// 1. Create Context object: contains data that been shared between components
 const AuthContext = createContext();
 
 const initialState = {
@@ -27,9 +28,12 @@ function reducer(state, action) {
   }
 }
 
+// 2. Create parent component that wraps child components with a Provider. Any component that is a child of the Provider component can access that shared data
 function AuthProvider({ children }) {
   const [{ user, isAuthenticated }, dispatch] = useReducer(reducer, initialState);
+  // useReducer returns an array of 2 values: the current state and dispatch function that lets you update the state to a different value and trigger a re-render
 
+  // Update UI
   function login(email, password) {
     if (email === FAKE_USER.email && password === FAKE_USER.password) {
       dispatch({ type: "login", payload: FAKE_USER });
@@ -43,10 +47,10 @@ function AuthProvider({ children }) {
   return <AuthContext.Provider value={{ user, isAuthenticated, login, logout }}>{children}</AuthContext.Provider>;
 }
 
+// 3. Consume the Context
 function useAuth() {
   const context = useContext(AuthContext);
   if (context === undefined) throw new Error("AuthContxet is used outside of AuthProvider.");
-
   return context;
 }
 
